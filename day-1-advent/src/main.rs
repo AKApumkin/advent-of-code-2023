@@ -15,12 +15,11 @@ fn main() {
 
     let mut count = 0;
     for line in wbyl {
-        let matches = match_regex_numbers(&line);
-        //println!("{:?}", matches);
-        let matches_string = matches.unwrap().get(0).unwrap().as_str();
-        // split string into first and last characters
-        let first_char = matches_string.chars().next().unwrap();
-        let last_char = matches_string.chars().next_back().unwrap();
+
+        let matches = match_regex_numbers(&line).unwrap().get(0).unwrap().as_str();
+
+        let first_char = matches.chars().next().unwrap();
+        let last_char = matches.chars().next_back().unwrap();
 
         let combined_number = first_char.to_string() + &last_char.to_string();
 
